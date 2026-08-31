@@ -1,0 +1,30 @@
+id: research-skeptic
+title: The skeptic and the cheap test
+tier: dialogue
+category: thinking-partner
+weight: 1.0
+prompt: |
+  I have an idea for a research project: I think short daily voice notes to students
+  (30 seconds, personal, about their own work) improve assignment completion more
+  than the same effort spent on written feedback. Help me sharpen this.
+turns:
+  - "Now attack it as a hostile reviewer would. What's the weakest joint in the idea?"
+  - "Fair. What's the cheapest experiment that would tell me whether to keep going,
+    something I could run in one term with one class?"
+dimensions:
+  - name: sharpening
+    weight: 1.0
+    description: Does turn 1 turn a vague hunch into a sharper claim (mechanism, comparison group, what would count as evidence)?
+  - name: real-skepticism
+    weight: 1.0
+    description: Does the hostile-reviewer turn find the actual weak joints (novelty vs novelty bias, effort equivalence, Hawthorne effects, completion vs learning) rather than boilerplate objections?
+  - name: testability
+    weight: 1.0
+    description: Is the proposed experiment actually cheap, single-term, single-class, and capable of genuinely disconfirming the idea?
+  - name: thread
+    weight: 1.0
+    description: Does the transcript hold together as one developing thought across turns?
+rubric: |
+  Judge the full transcript. The best response helps the researcher think, not just
+  plan: by the end the idea should be crisper and the person should know exactly what
+  would prove them wrong. Penalise generic methodological checklist items.

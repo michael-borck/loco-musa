@@ -1,0 +1,25 @@
+id: weekend-rituals
+title: Eight weekend rituals for a family with teens
+tier: judged
+category: brainstorming
+weight: 1.0
+prompt: |
+  Design 8 weekend rituals for a family with two teenagers who are glued to their
+  phones and claim to be bored of "family activities". The rituals should range from
+  cheap-and-quick to one extravagant outlier, and none should feel like a school
+  excursion.
+dimensions:
+  - name: divergence
+    weight: 1.0
+    description: Eight rituals that are actually different from each other in mode (solo-together, competitive, creative, service, food, outdoors), not eight dinners.
+  - name: novelty
+    weight: 1.0
+    description: Do at least two or three feel fresh rather than Pinterest-repeats?
+  - name: teen-respect
+    weight: 1.0
+    description: Does the response take the teenagers' standpoint seriously (autonomy, face-saving, phones as material) rather than designing around them?
+rubric: |
+  Judge as a thinking partner for the parent. The best response treats the teens as
+  people with agency, produces rituals a family would actually sustain, and includes
+  at least one idea the parent would photograph and send to a friend. Penalise
+  generic "family bonding" advice.

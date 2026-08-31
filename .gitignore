@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.DS_Store
+._*
+.venv/
+venv/
+human/packet/
+human/packet-key.json
+human/votes.yaml
+human/agreement.json

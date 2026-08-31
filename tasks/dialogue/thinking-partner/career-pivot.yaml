@@ -1,0 +1,34 @@
+id: career-pivot
+title: Should I leave engineering for teaching
+tier: dialogue
+category: thinking-partner
+weight: 1.0
+prompt: |
+  I've been a software engineer for 12 years and I keep daydreaming about teaching
+  high school maths. I'm 38, mortgage, one kid. Help me think about whether to do it.
+turns:
+  - "That's roughly where I landed too. Now make the risks concrete for me — not
+    generic career risks, the specific versions of them for someone like me."
+  - "Steelman staying put. Make the case that the daydream is telling me something
+    other than 'become a teacher'."
+  - "Give me one genuinely weird option I haven't considered. Weird on purpose —
+    something I'd laugh at first and then think about for a week."
+  - "OK last turn: what is the cheapest experiment I could run in the next month that
+    would genuinely change my mind either way?"
+dimensions:
+  - name: builds-on-turns
+    weight: 1.0
+    description: Does each answer use what the person revealed in earlier turns (age, mortgage, kid, 12 years) instead of restarting?
+  - name: escalates
+    weight: 1.0
+    description: Does the conversation get deeper rather than repetitive — new considerations each turn, not rephrased ones?
+  - name: honest-pushback
+    weight: 1.0
+    description: Does it push back where the person's framing is shaky, without lecturing?
+  - name: memorable
+    weight: 1.0
+    description: Is there at least one moment (a reframe, an image, the weird option) the person would repeat to their partner that evening?
+rubric: |
+  Judge the full transcript as one conversation. A great thinking partner accumulates
+  context, escalates depth, and changes the person's mind about what the question is.
+  Penalise transcripts where each turn could have been generated independently.

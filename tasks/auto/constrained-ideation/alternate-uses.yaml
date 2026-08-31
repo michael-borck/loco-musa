@@ -1,0 +1,20 @@
+id: alternate-uses
+title: Twenty uses for a paperclip
+tier: auto
+category: constrained-ideation
+weight: 1.0
+prompt: |
+  List 20 genuinely different uses for an ordinary metal paperclip.
+
+  Hard rules:
+  - Exactly 20 uses, one per line, numbered 1-20
+  - Each use is 12 words or fewer
+  - No duplicates or trivial rewordings (a use that clips paper appears at most once)
+  - Aim for range: practical, clever, absurd — but each must actually work as a use
+
+checks:
+  - name: item_constraints
+    args:
+      count: 20
+      max_words: 12
+      unique: true

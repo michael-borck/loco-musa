@@ -1,0 +1,26 @@
+id: course-abandonment
+title: Six courses, zero finished
+tier: judged
+category: reframing
+weight: 1.0
+prompt: |
+  I've signed up for six online courses this year and finished none of them. I keep
+  telling myself I'll get back to them on the weekend. What should I do?
+dimensions:
+  - name: reframing
+    weight: 1.0
+    description: Does it question the framing (that finishing is the goal, that the courses are the asset) rather than accept "how do I finish" as given?
+  - name: hypotheses
+    weight: 1.0
+    description: Does it offer a small set of distinct, plausible explanations for the pattern (choice of courses, identity, weekend plan fallacy, cost-of-entry psychology) instead of one pet theory?
+  - name: questions
+    weight: 1.0
+    description: Does it ask one or two questions whose answers would actually change the advice?
+  - name: next-move
+    weight: 1.0
+    description: Does it end with something small and doable this week, not a life-plan essay?
+rubric: |
+  Judge as a thinking partner. The mediocre response gives productivity tips (time
+  blocking, Pomodoro). The good response notices the pattern is about the person's
+  relationship to the courses, offers competing explanations, and probes. The great
+  one does all that in a few paragraphs and hands back a decision the person can make.

@@ -1,0 +1,22 @@
+id: names-no-e
+title: Ten product names without the letter E
+tier: auto
+category: constrained-ideation
+weight: 1.0
+prompt: |
+  A friend is launching a reusable coffee cup brand and needs a name. Brainstorm 10
+  candidate names for the brand.
+
+  Hard rules:
+  - Exactly 10 names, one per line, numbered 1-10
+  - No name contains the letter "e" (upper or lower case)
+  - Each name is 1-2 words
+  - Every name should feel like a real brand someone would remember
+
+  This is a creative sprint: go for range, not one safe idea repeated.
+checks:
+  - name: item_constraints
+    args:
+      count: 10
+      max_words: 2
+      forbidden_letters: ["e"]

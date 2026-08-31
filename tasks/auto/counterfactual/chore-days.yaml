@@ -1,0 +1,25 @@
+id: chore-days
+title: Who does chores on which day
+tier: auto
+category: counterfactual
+weight: 1.0
+prompt: |
+  Three siblings each do a household chore on a different weekday: Monday, Wednesday,
+  or Friday.
+
+  Clues:
+  1. Ada's chore day is exactly two days before Cara's chore day.
+  2. Ben does not have Monday.
+
+  Who has which day? Give your reasoning, then end with the final answer on its own
+  last line in the form: Name=Day for each sibling.
+
+checks:
+  - name: pairs_in_sentence
+    args:
+      pairs:
+        - ["ada", "monday"]
+        - ["ben", "friday"]
+        - ["cara", "wednesday"]
+      window: last
+      max_gap: 12

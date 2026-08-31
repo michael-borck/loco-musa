@@ -1,0 +1,18 @@
+id: factory-doubling
+title: When does output pass 100000
+tier: auto
+category: counterfactual
+weight: 1.0
+prompt: |
+  A factory produces 100 units on day 1. Production doubles every day exactly.
+
+  On which day does daily production first exceed 100,000 units?
+
+  Give your reasoning, then end with the final answer on its own last line in the
+  form: Day N
+
+checks:
+  - name: numeric_answer
+    args:
+      answer: 11
+      pattern: "[Dd]ay\\s*(\\d+)"

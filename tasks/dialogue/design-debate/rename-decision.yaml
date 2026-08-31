@@ -1,0 +1,30 @@
+id: rename-decision
+title: Naming the product the team is split on
+tier: dialogue
+category: design-debate
+weight: 1.0
+prompt: |
+  We're a five-person team renaming our note-taking app for builders. The shortlist
+  is down to "Tessel" and "Grokmark" and we're split. Talk me through this decision.
+turns:
+  - "Before we go on: what would you want to know about our users before deciding,
+    and what's your read given what I've told you?"
+  - "Interesting. Now argue for the name you DON'T prefer, as strongly as you can."
+  - "Give me a way to decide this in a week without a formal user study. Cheap, real,
+    and something that produces evidence rather than more opinions."
+dimensions:
+  - name: clarifies-first
+    weight: 1.0
+    description: Does it notice what user information is load-bearing for the decision before opining?
+  - name: switches-sides
+    weight: 1.0
+    description: Does the argue-the-other-side turn take the disliked name seriously and produce a real case?
+  - name: decision-craft
+    weight: 1.0
+    description: Is the week-long method cheap, evidence-producing, and free of opinion-amplification (not 'poll the team again')?
+  - name: judgment
+    weight: 1.0
+    description: Overall, does it read like a sharp colleague, not a consultant deck?
+rubric: |
+  Judge the full transcript as a naming-decision conversation. The best transcript
+  ends with the person knowing HOW to decide rather than being told what to pick.

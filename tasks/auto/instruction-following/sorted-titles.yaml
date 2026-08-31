@@ -1,0 +1,23 @@
+id: sorted-titles
+title: Five titles in reverse alphabetical order
+tier: auto
+category: instruction-following
+weight: 1.0
+prompt: |
+  Invent 5 titles for a mystery novel set in a lighthouse.
+
+  Hard rules:
+  - One title per line, numbered 1-5
+  - The titles must be in REVERSE alphabetical order (line 1 is alphabetically last)
+  - Each title is 6 words or fewer
+  - No two titles may start with the same letter
+
+checks:
+  - name: item_constraints
+    args:
+      count: 5
+      max_words: 6
+      unique: true
+  - name: sorted_order
+    args:
+      direction: desc

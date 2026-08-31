@@ -1,0 +1,26 @@
+id: no-comma-email
+title: Decline email, no commas
+tier: auto
+category: instruction-following
+weight: 1.0
+prompt: |
+  Write a short email declining a colleague's invitation to join their weekend
+  trivia team. You genuinely like the colleague and want to be invited again.
+
+  Hard rules:
+  - Between 50 and 80 words (not counting a subject line)
+  - Do not use a single comma anywhere in the email
+  - The email must include the exact phrase "count me out"
+  - Warm in tone: decline the invite, not the person
+
+checks:
+  - name: word_count
+    args:
+      min: 50
+      max: 80
+  - name: forbidden_chars
+    args:
+      chars: [","]
+  - name: includes_phrases
+    args:
+      phrases: ["count me out"]

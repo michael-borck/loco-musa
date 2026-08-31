@@ -1,0 +1,27 @@
+id: four-day-week
+title: Steelman the case against the four-day week
+tier: judged
+category: steelman
+weight: 1.0
+prompt: |
+  I believe moving my company to a four-day week would raise productivity. I've read
+  the trials and I'm fairly convinced. Give me the strongest honest case AGAINST
+  doing it — not a strawman to knock down, but the version of the argument that a
+  sharp, sceptical operations lead would make me.
+dimensions:
+  - name: strength
+    weight: 1.0
+    description: Would the person's belief actually be under pressure after reading this?
+  - name: steel-not-straw
+    weight: 1.0
+    description: Does it engage the strongest counter-evidence (trial selection effects, self-report metrics, hidden intensity costs, industry fit) rather than lazy objections?
+  - name: fairness
+    weight: 1.0
+    description: Does it represent the trials' real findings, conceding what it should concede?
+  - name: decisiveness
+    weight: 1.0
+    description: Does it surface what evidence would settle the question for THIS company?
+rubric: |
+  Judge as a thinking partner who happens to disagree. The best response leaves the
+  reader genuinely less certain than before and names the experiment that would move
+  them. Penalise both cheerleading and knee-jerk contrarianism.

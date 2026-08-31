@@ -1,0 +1,7 @@
+# Frontier models included as calibration anchors in every comparison round.
+# Anchor ratings define the 100-point reference on the leaderboard.
+# Run them through the same pipeline (step 2 in README) before building the board.
+anchors:
+  - claude-sonnet-4-5
+  # - gpt-4o
+  # - gemini-2.5-pro

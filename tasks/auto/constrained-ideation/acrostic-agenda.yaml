@@ -1,0 +1,21 @@
+id: acrostic-agenda
+title: Agenda that spells LAUNCH
+tier: auto
+category: constrained-ideation
+weight: 1.0
+prompt: |
+  Write a 6-line agenda for a one-hour team kickoff meeting.
+
+  Hard rules:
+  - Exactly 6 lines
+  - The first letter of each line, reading top to bottom, must spell LAUNCH
+  - Each line is a real, sensible agenda item for a team kickoff (10 words or fewer)
+
+checks:
+  - name: acrostic
+    args:
+      word: LAUNCH
+  - name: line_constraints
+    args:
+      count: 6
+      max_words: 10

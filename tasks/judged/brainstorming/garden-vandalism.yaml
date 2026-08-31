@@ -1,0 +1,26 @@
+id: garden-vandalism
+title: Fifteen responses to a vandalised garden
+tier: judged
+category: brainstorming
+weight: 1.0
+prompt: |
+  Our community garden was vandalised twice this month — beds kicked over, tools
+  stolen. We are volunteers with almost no budget. Brainstorm 15 possible responses,
+  deliberately ranging from mundane to weird: practical security, community moves,
+  design changes, anything. Label the wilder ones so we know you knew.
+dimensions:
+  - name: divergence
+    weight: 1.0
+    description: Do the 15 ideas span genuinely different categories (people, design, enforcement, ritual, humour) or cluster in two?
+  - name: novelty
+    weight: 1.0
+    description: Are there at least a few ideas an experienced committee would not have thought of?
+  - name: buildability
+    weight: 1.0
+    description: Do the practical ideas respect the near-zero budget, and are the wild ideas still actionable in principle?
+rubric: |
+  Judge as a thinking partner: which response would give the garden committee more
+  useful next thoughts? Prefer responses that produce real range and a few surprising
+  but buildable ideas over safe, repetitive lists. A response that quietly converts
+  the problem (e.g. community-watch-by-design instead of fences) should beat a longer
+  list of the obvious.

@@ -1,0 +1,8 @@
+# Copy to votes.yaml and fill in one entry per blind packet.
+# Vote on transcript quality alone — packets do not reveal model names.
+voter: your-name
+votes:
+  - packet_id: 001-garden-vandalism
+    winner: a        # a | b | tie
+  - packet_id: 002-course-abandonment
+    winner: tie

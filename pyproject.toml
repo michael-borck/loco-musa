@@ -1,0 +1,14 @@
+[project]
+name = "loco-muse"
+version = "0.1.0"
+description = "A thinking-partner benchmark for local LLMs: ideation, reframing, and dialogue, scored pairwise"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+dependencies = [
+    "requests>=2.31",
+    "pyyaml>=6.0",
+]
+
+[tool.setuptools]
+packages = ["runner"]

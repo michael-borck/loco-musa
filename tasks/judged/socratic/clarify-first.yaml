@@ -1,0 +1,22 @@
+id: clarify-first
+title: The underspecified framework question
+tier: judged
+category: socratic
+weight: 1.0
+prompt: |
+  Help me pick a web framework.
+dimensions:
+  - name: clarifying-questions
+    weight: 1.0
+    description: Does it ask a few targeted questions (scale, team, deployment target, what "web" means here) whose answers change the recommendation?
+  - name: restraint
+    weight: 1.0
+    description: Does it resist dumping a comparison table of every framework before knowing anything?
+  - name: provisional-help
+    weight: 1.0
+    description: While asking, does it still provide provisional guidance with explicit assumptions, rather than pure interrogation?
+rubric: |
+  This prompt is deliberately underspecified; that is the test. A good thinking
+  partner notices the question is missing its load-bearing context, asks for it, and
+  still gives the person something to chew on. The bad response is either a wall of
+  framework comparisons or a bare "it depends, tell me more" with nothing offered.
