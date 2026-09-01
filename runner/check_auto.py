@@ -26,7 +26,9 @@ def main():
     scored = 0
     for rec in transcripts:
         task = tasks.get(rec["task_id"])
-        if not task or task["tier"] != "auto":
+        # hybrid tasks (judged/dialogue with `checks`) score here too:
+        # constraints are deterministic, substance is judged separately.
+        if not task or not task.get("checks"):
             continue
         if rec.get("error") or not rec.get("messages"):
             per_task[rec["task_id"]] = {"score": 0.0, "error": rec.get("error")}

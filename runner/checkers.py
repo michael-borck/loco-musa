@@ -176,10 +176,21 @@ def pairs_in_sentence(text, args):
     return found / total, {"missing": missing}
 
 
+def includes_any(text, args):
+    """At least min_hits of the regex patterns must appear (case-insensitive).
+    For planted-flaw detection: does the response actually diagnose the issue?"""
+    patterns = args.get("patterns", [])
+    min_hits = args.get("min_hits", 1)
+    found = [p for p in patterns if re.search(p, text, flags=re.IGNORECASE)]
+    score = min(1.0, len(found) / max(1, min_hits))
+    return score, {"hits": len(found), "min_hits": min_hits, "found": found}
+
+
 CHECKERS = {
     "word_count": word_count,
     "forbidden_chars": forbidden_chars,
     "includes_phrases": includes_phrases,
+    "includes_any": includes_any,
     "item_constraints": item_constraints,
     "line_constraints": line_constraints,
     "acrostic": acrostic,

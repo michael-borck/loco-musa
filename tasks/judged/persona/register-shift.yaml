@@ -1,0 +1,31 @@
+id: register-shift
+title: Same tradeoff, two audiences
+tier: judged
+category: persona
+weight: 1.0
+prompt: |
+  Our team must choose between buying a managed message queue or self-hosting an
+  open-source one. Explain this tradeoff twice, for two different readers:
+
+  1. To a tired junior developer on the team — encouraging, concrete, jargon
+     only where it earns its place.
+  2. To a sceptical CFO — cost, risk, and what happens when it breaks. No
+     engineering jargon that isn't translated.
+
+  Label the two explanations clearly. Both must represent the tradeoff honestly
+  and identically in substance — only the register changes.
+dimensions:
+  - name: register-control
+    weight: 1.0
+    description: Are the two explanations genuinely different in voice, framing, and vocabulary — not the same text with the headers swapped?
+  - name: content-invariance
+    weight: 1.0
+    description: Does the core tradeoff (operational burden vs control; fixed cost vs hidden cost; what breaks at 3am) stay consistent and honest across both versions?
+  - name: audience-respect
+    weight: 1.0
+    description: Does the junior version teach without condescending, and the CFO version translate jargon rather than avoid the question?
+rubric: |
+  Register control is a thinking-partner skill: the model that can carry the
+  same honest analysis across audiences amplifies the reader instead of the
+  model. Penalise responses where the CFO version is just the junior version
+  with a suit drawn on, or where simplification slides into inaccuracy.

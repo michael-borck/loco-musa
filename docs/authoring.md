@@ -28,6 +28,7 @@ A list of named checks; the task's score is the mean of check scores.
 | `word_count` | `min`, `max` | total words in bounds |
 | `forbidden_chars` | `chars` | no listed character anywhere |
 | `includes_phrases` | `phrases` | all phrases present (case-insensitive) |
+| `includes_any` | `patterns` (regex), `min_hits` | at least `min_hits` patterns match — planted-flaw detection |
 | `item_constraints` | `count`, `max_words`, `forbidden_letters`, `unique` | numbered-list properties |
 | `line_constraints` | `count`, `max_words` | plain line properties |
 | `acrostic` | `word` | first letters of lines spell the word |
@@ -59,6 +60,13 @@ rubric: |
 The judge receives prompt + follow-ups (if any) + dimensions + rubric verbatim.
 Good rubrics name the *mediocre* response explicitly ("the mediocre response
 gives productivity tips") — that's what lifts judge–human agreement.
+
+**Hybrid tasks**: a judged/dialogue task may also carry `checks`. The checks are
+scored deterministically by `check_auto` (and count toward the model's auto
+score), while the substance is judged pairwise. Use the auto layer for anything
+a regex can verify — verdict lines, planted-flaw diagnosis, format contracts —
+and leave judgment about quality to the judge. If the checker can pass while the
+response is garbage, the checker is testing the wrong thing.
 
 ## dialogue tier: `turns`
 

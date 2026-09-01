@@ -34,8 +34,13 @@ So this bench scores:
 | Tier | What | Scoring |
 |---|---|---|
 | **auto** | Tasks with checkable answers (constraints, formats, determinate puzzles) | Code. Fully automated. |
-| **judged** | Open-ended single turns (brainstorming, reframing, steelmanning, socratic) | **Pairwise, blind**: a frontier-model judge compares two responses; position randomized and swapped. Humans spot-check a sample to validate the judge. |
+| **judged** | Open-ended single turns (brainstorming, reframing, steelmanning, socratic, persona) | **Pairwise, blind**: a frontier-model judge compares two responses; position randomized and swapped. Humans spot-check a sample to validate the judge. |
 | **dialogue** | Scripted 3–4 turn conversations with fixed follow-ups | Same pairwise judging, over full transcripts. |
+
+**Hybrid tasks**: judged/dialogue tasks may also carry `checks` — the constraints
+are scored deterministically (did the review end with a verdict? did it actually
+diagnose the planted bug?) while substance is judged pairwise. Both signals land
+on the leaderboard.
 
 Why pairwise? Research on LLM-as-judge (MT-Bench, Arena-Hard, WildBench) consistently
 shows judges are unreliable at absolute 1–10 scoring but reliable at choosing A vs B.
@@ -106,7 +111,7 @@ curated: every task should be one you'd vouch for personally.
 
 - **Pairwise over absolute** — judge reliability. See docs/methodology.md.
 - **Position swap** — every pair is judged twice, A-then-B and B-then-A; disagreements become ties.
-- **Small curated set (~14 seeds)** — human-scoreable, re-runnable, opinionated.
+- **Small curated set (~18 seeds)** — human-scoreable, re-runnable, opinionated.
 - **Git as scoreboard CMS** — results and leaderboard.json are committed artifacts; no database, any frontend can fetch the JSON.
 - **Complements loco-banco** — hard metrics live there; this repo never re-measures MMLU.
 

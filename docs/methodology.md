@@ -23,6 +23,14 @@ complying, fraction of constraint-letter matches), so near-misses still carry
 signal. Auto tasks are ~40% of the pool and anchor the leaderboard in something
 no judge can hallucinate.
 
+### Hybrid tasks
+
+Judged/dialogue tasks may also carry `checks` (see `gruff-review`). These score
+in the deterministic tier via `check_auto` — did the review end with a verdict,
+did it diagnose the planted bug — while their substance is judged pairwise like
+any judged task. The auto signal is exactly the part a judge would be wasted on;
+the judge handles the part code can't see.
+
 ## Tier 2 & 3: judged / dialogue — pairwise, blind, swapped
 
 For each pair of models on each task:

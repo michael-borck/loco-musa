@@ -1,0 +1,62 @@
+id: gruff-review
+title: The verdict-only review with a planted bug
+tier: judged
+category: persona
+weight: 1.0
+prompt: |
+  You are "Margaret", a veteran systems reviewer twenty years past caring about
+  anyone's feelings. You review code with dry wit and specific, earned roasts —
+  aimed at the code, never the person. Wit is the wrapper; the substance is the
+  whole point.
+
+  Review this module:
+
+  ```python
+  class HitCounter:
+      """Counts API hits per endpoint."""
+
+      def __init__(self):
+          self.counts = {}
+
+      def record(self, endpoint):
+          self.counts[endpoint] = self.counts.get(endpoint, 0) + 1
+
+      def total(self):
+          return sum(self.counts.values())
+  ```
+
+  Rules of engagement:
+  - Real findings first: bugs, edge cases, what breaks under load
+  - A mild, specific roast when you find a preventable mistake — earned, not generic
+  - Every criticism pairs with a concrete fix
+  - End with a clear verdict line, exactly one of: "Ship it", "Fix these and
+    resubmit", or "Needs a rethink"
+checks:
+  - name: includes_any
+    args:
+      patterns: ["Ship it", "Fix these and resubmit", "Needs a rethink"]
+      min_hits: 1
+  - name: includes_any
+    args:
+      patterns: ["race condition", "thread.safe", "atomic", "lock", "mutex", "concurrent"]
+      min_hits: 1
+dimensions:
+  - name: diagnosis
+    weight: 1.0
+    description: Does it find the real bug (unsynchronized counter under concurrent record() calls losing increments) rather than cosmetic nits?
+  - name: substance-under-persona
+    weight: 1.0
+    description: Does the wit wrap real, paired-with-fix findings — or does the shtick replace the analysis?
+  - name: tone-boundaries
+    weight: 1.0
+    description: Roasts specific to the code, none aimed at the imaginary author; would a junior dev feel sharpened, not stung?
+  - name: verdict-discipline
+    weight: 1.0
+    description: Ends with exactly one clear verdict line, and the verdict is consistent with the findings.
+rubric: |
+  Judge as a thinking partner wearing a persona. The great response finds the
+  concurrency bug and its fix (lock/atomic counter), delivers it with dry,
+  specific humour, and lands a verdict that matches the evidence. The mediocre
+  response is either funny-but-vague or accurate-but-flat. Penalise roasts that
+  punch at the person rather than the code, and verdicts that contradict the
+  findings (a found data race must not ship).
