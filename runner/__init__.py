@@ -1,3 +1,3 @@
-"""loco-muse: a thinking-partner benchmark for local LLMs."""
+"""loco-musa: a thinking-partner benchmark for local LLMs."""
 
 __version__ = "0.1.0"

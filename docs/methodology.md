@@ -1,6 +1,6 @@
 # Methodology
 
-How loco-muse produces scores it is willing to defend.
+How loco-musa produces scores it is willing to defend.
 
 ## The measurement problem
 
@@ -13,7 +13,7 @@ How loco-muse produces scores it is willing to defend.
 2. **Self-preference and position bias** — a judge prefers its own style, and
    prefers whichever answer it reads first.
 
-loco-muse's design answers each failure mode explicitly.
+loco-musa's design answers each failure mode explicitly.
 
 ## Tier 1: auto — deterministic
 

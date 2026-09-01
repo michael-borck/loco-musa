@@ -1,10 +1,10 @@
-# loco-muse
+# loco-musa
 
 **Not "how smart is the model?" but "how good is it to think with?"**
 
-loco-muse is a small, curated benchmark for local LLMs that measures **thinking-partner
+loco-musa is a small, curated benchmark for local LLMs that measures **thinking-partner
 quality**: ideation, reframing, steelmanning, and multi-turn conversation. It complements
-[loco-bench](https://github.com/michael-borck/loco-bench) (which measures precision
+[loco-banco](https://github.com/michael-borck/loco-banco) (which measures precision
 knowledge and reasoning with deterministic benchmarks) by measuring the thing that
 actually matters when you use a local model as a *thinking partner* rather than an
 *oracle*.
@@ -12,7 +12,7 @@ actually matters when you use a local model as a *thinking partner* rather than 
 ## The philosophy: conversation as thinking
 
 Writing has long been understood as a form of thinking, not just a record of thought
-(Langer & Applebee, *How Writing Shapes Thinking*, 1987). loco-muse extends the idea:
+(Langer & Applebee, *How Writing Shapes Thinking*, 1987). loco-musa extends the idea:
 **conversation-with-AI as thinking**. The valuable local model is not the one that gives
 the most precise answer — it is the one that makes *your* next thought better. The one
 that offers a tenth idea after you had nine. That reframes the problem you brought it.
@@ -24,6 +24,10 @@ So this bench scores:
 - **Reframing** — does it find a better question than the one you asked?
 - **Pushback** — can it steelman the position you didn't take?
 - **Dialogue** — across turns, does it build, escalate, and notice, rather than restart?
+
+> **Name note:** unrelated to Salesforce's *LoCoBench* (long-context software
+> engineering) despite the similar name. The `loco-` prefix here belongs to the
+> [LocoLabo](https://locolabo.org) family.
 
 ## How it works: three tiers
 
@@ -104,7 +108,7 @@ curated: every task should be one you'd vouch for personally.
 - **Position swap** — every pair is judged twice, A-then-B and B-then-A; disagreements become ties.
 - **Small curated set (~14 seeds)** — human-scoreable, re-runnable, opinionated.
 - **Git as scoreboard CMS** — results and leaderboard.json are committed artifacts; no database, any frontend can fetch the JSON.
-- **Complements loco-bench** — hard metrics live there; this repo never re-measures MMLU.
+- **Complements loco-banco** — hard metrics live there; this repo never re-measures MMLU.
 
 ## Limitations
 
@@ -115,7 +119,8 @@ curated: every task should be one you'd vouch for personally.
 
 ## Related projects
 
-- [loco-bench](https://github.com/michael-borck/loco-bench): deterministic benchmarks by VRAM tier (the "how smart" half)
+- [loco-banco](https://github.com/michael-borck/loco-banco): deterministic benchmarks by VRAM tier (the "how smart" half)
+- [loco-agente](https://github.com/michael-borck/loco-agente): the conversational harness — muse measures whether raw models already think well; agente engineers it when they don't
 - [MT-Bench](https://arxiv.org/abs/2306.05685), [Arena-Hard](https://github.com/lm-sys/FastChat), [WildBench](https://github.com/allenai/WildBench): the judge-based evaluation patterns this repo borrows
 
 ## License
