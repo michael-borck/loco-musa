@@ -1,8 +1,8 @@
 # Authoring tasks
 
-Tasks are YAML files under `tasks/<tier>/<category>/<id>.yaml`. No code per task.
+Tasks are YAML files under `tasks/<tier>/<category>/<id>.yaml`, with no code per task.
 The bench is deliberately small: **add a task only if you'd vouch for it
-personally** — one task you believe in beats ten you threw in.
+personally**. One task you believe in beats ten you threw in.
 
 ## Common fields
 
@@ -16,8 +16,8 @@ prompt: |
   The task given to the model.
 ```
 
-Prompts are collapsed (`" ".join(prompt.split())`) before sending — write them
-for reading, they travel as one line.
+Prompts are collapsed (`" ".join(prompt.split())`) before sending. Write them
+for reading; they travel as one line.
 
 ## auto tier: `checks`
 
@@ -28,7 +28,7 @@ A list of named checks; the task's score is the mean of check scores.
 | `word_count` | `min`, `max` | total words in bounds |
 | `forbidden_chars` | `chars` | no listed character anywhere |
 | `includes_phrases` | `phrases` | all phrases present (case-insensitive) |
-| `includes_any` | `patterns` (regex), `min_hits` | at least `min_hits` patterns match — planted-flaw detection |
+| `includes_any` | `patterns` (regex), `min_hits` | at least `min_hits` patterns match; planted-flaw detection |
 | `item_constraints` | `count`, `max_words`, `forbidden_letters`, `unique` | numbered-list properties |
 | `line_constraints` | `count`, `max_words` | plain line properties |
 | `acrostic` | `word` | first letters of lines spell the word |
@@ -38,9 +38,8 @@ A list of named checks; the task's score is the mean of check scores.
 
 Design notes for auto tasks:
 
-- Constraints should be **load-bearing for creativity**, not bureaucracy.
-  "10 names with no letter e" forces divergence; "write 10 names in ≤20 words"
-  doesn't.
+- Constraints should be **load-bearing for creativity**: "10 names with no letter e"
+  forces divergence; "write 10 names in ≤20 words" doesn't.
 - Always test your task against a frontier model and a small local model before
   committing. If the frontier model scores below ~0.8, the check is probably
   miscalibrated.
@@ -59,12 +58,12 @@ rubric: |
 
 The judge receives prompt + follow-ups (if any) + dimensions + rubric verbatim.
 Good rubrics name the *mediocre* response explicitly ("the mediocre response
-gives productivity tips") — that's what lifts judge–human agreement.
+gives productivity tips"). That is what lifts judge-human agreement.
 
 **Hybrid tasks**: a judged/dialogue task may also carry `checks`. The checks are
 scored deterministically by `check_auto` (and count toward the model's auto
 score), while the substance is judged pairwise. Use the auto layer for anything
-a regex can verify — verdict lines, planted-flaw diagnosis, format contracts —
+a regex can verify (verdict lines, planted-flaw diagnosis, format contracts)
 and leave judgment about quality to the judge. If the checker can pass while the
 response is garbage, the checker is testing the wrong thing.
 
@@ -73,8 +72,8 @@ response is garbage, the checker is testing the wrong thing.
 `turns` is a list of fixed user follow-ups. Fixed turns are what make multi-turn
 comparable across models: everyone gets the same conversation partners' moves.
 Write follow-ups that escalate ("now steelman the opposite", "give me one weird
-option", "what's the cheapest test?") — they probe whether the model builds on
-context rather than restarting each turn.
+option", "what's the cheapest test?"). They probe whether the model builds on
+context or restarts each turn.
 
 ## Acceptance checklist
 
