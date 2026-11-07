@@ -1,0 +1,43 @@
+---
+title: LocoMusa
+description: How good is a local LLM to think with? Ideation, reframing, steelmanning, and dialogue, scored pairwise against frontier anchors.
+template: splash
+hero:
+  tagline: How good is a local LLM to think with?
+  actions:
+    - text: Read the methodology
+      link: /methodology/
+      icon: right-arrow
+      variant: primary
+    - text: Leaderboard (JSON)
+      link: https://raw.githubusercontent.com/michael-borck/loco-musa/main/leaderboard.json
+      icon: external
+      variant: secondary
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+LocoMusa is a small, curated benchmark for local LLMs that measures **thinking-partner quality**: ideation, reframing, steelmanning, and multi-turn dialogue. It complements [LocoBanco](https://locobanco.org) (deterministic knowledge and reasoning) by measuring how well a local model works with you.
+
+<CardGrid stagger>
+  <Card title="Methodology" icon="open-book">
+    Why pairwise judging, why positions are swapped, and how scores are normalised against frontier anchors.
+
+    [Read the methodology](/methodology/)
+  </Card>
+  <Card title="Human judging" icon="comment">
+    How a sample of human votes calibrates the automated judge, so you know how much to trust it.
+
+    [Human judging guide](/human-judging/)
+  </Card>
+  <Card title="Authoring tasks" icon="pencil">
+    Tasks are plain YAML with no code per task. The set is deliberately small and curated.
+
+    [Authoring guide](/authoring/)
+  </Card>
+  <Card title="Repository" icon="github">
+    Tasks, harness, judge, and the full methodology live on GitHub.
+
+    [michael-borck/loco-musa](https://github.com/michael-borck/loco-musa)
+  </Card>
+</CardGrid>

@@ -1,9 +1,19 @@
-__pycache__/
-*.pyc
+# macOS
 .DS_Store
 ._*
+
+# Node
+node_modules/
+dist/
+.astro/
+
+# Python
+__pycache__/
+*.pyc
 .venv/
 venv/
+
+# Human judging artifacts
 human/packet/
 human/packet-key.json
 human/votes.yaml

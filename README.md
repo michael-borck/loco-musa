@@ -2,6 +2,8 @@
 
 **How good is the model to think with?**
 
+**Site:** [locomusa.org](https://locomusa.org)
+
 loco-musa is a small, curated benchmark for local LLMs that measures **thinking-partner
 quality**: ideation, reframing, steelmanning, and multi-turn conversation. It complements
 [loco-banco](https://github.com/michael-borck/loco-banco) (which measures precision
