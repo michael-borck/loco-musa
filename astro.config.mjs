@@ -13,6 +13,11 @@ export default defineConfig({
         home: 'https://locomusa.org',
         github: 'loco-musa',
         accent: { low: '#1b1433', main: '#7c5cff', high: '#d6ccff' },
+        logo: {
+          alt: 'LocoMusa',
+          src: './src/assets/art/icon.png',
+          replacesTitle: false,
+        },
         sidebar: [
           {
             label: 'Benchmark',
